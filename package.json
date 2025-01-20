@@ -24,9 +24,7 @@
     "jest/build"
   ],
   "scripts": {
-    "build:mock": "tsc --build jest",
-    "prepare": "bob build && yarn build:mock",
-    "release": "yarn prepare && npx semantic-release"
+    "build:mock": "tsc --build jest"
   },
   "codegenConfig": {
     "name": "rndocumentpickerCGen",
@@ -76,17 +74,8 @@
   },
   "react-native-builder-bob": {
     "source": "src",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
+    "output": "lib"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "yarn@4.5.1",
+  "prepare": "tsc"
 }
